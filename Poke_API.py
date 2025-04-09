@@ -39,3 +39,4 @@ if info:
     print(f"Pokemon_Name: {info['name']}")
     print(f"ID: {info['id']}")
     print(f"Height: {info['height']}")
+    #print(f"Abilities: {info['abilities']}")
