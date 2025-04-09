@@ -20,5 +20,22 @@ def getPokemonInfo(name):
     # This will return a HTTP status code, It should be 200 to mean that the response was okay
     
     print(f"This is the response code : {response}") 
+    
+    #print(response.status_code)
+     
+    # If statement to fetch data if the response code is equal to 200
+    
+    if response.status_code == 200:
+        pokemonData = response.json()
+        return pokemonData
+    else:
+        print(f"Failed to retrieve the data{response.status_code}")
+        
+    
 
-getPokemonInfo(pokemonName)
+info = getPokemonInfo(pokemonName)
+
+if info:
+    print(f"Pokemon_Name: {info['name']}")
+    print(f"ID: {info['id']}")
+    print(f"Height: {info['height']}")
